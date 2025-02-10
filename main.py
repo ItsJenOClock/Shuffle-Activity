@@ -9,7 +9,8 @@ deck_of_cards = [f"{card}{suit}" for card in CARDS for suit in SUITS]
 # Using randint() is ok
 def shuffle_deck(deck_of_cards):
     shuffled_deck = [] # do not uncomment
-
+    deck_size = len(deck_of_cards)
+    
     # while len(shuffled_deck) < len(deck_of_cards):
     #     card = deck_of_cards[random.randint(0, len(deck_of_cards) - 1)]
     #     if card not in shuffled_deck:
@@ -17,7 +18,7 @@ def shuffle_deck(deck_of_cards):
 
     deck_copy = deck_of_cards[:]
 
-    # for i in range(len(deck_of_cards)):
+    # for i in range(deck_size):
     for card in deck_of_cards:
         card_index = random.randint(0, len(deck_copy) - 1)
         shuffled_deck.append(deck_copy[card_index])
